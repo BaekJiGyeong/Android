@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ktds.yjh.listview.WritePostActivity">
+
+    <EditText
+        android:id="@+id/etPost"
+        android:inputType="textMultiLine"
+        android:hint="포스트 내용을 입력하세요"
+        android:gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+
+</LinearLayout>
+
+
+
