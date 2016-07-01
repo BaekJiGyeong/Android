@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ktds.jgbaek.myreceiver">
+
+    <!-- Android OS로 부터 Message를 얻어올 권한 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".MySmsReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <!--
+                Intent Filter의 역할
+                해당 컴포넌트가 동작할 유형을 정의할 수 있다.
+
+                android.intent.action.Main : Application에서 가장 먼저 실행될 Activity라는 의미
+                android.intent.category.LAUNCHER : Home 화면에 Application을 등록한다 라는 의미
+                android.provider.Telephony.SMS_RECEIVED : 문자메세지가 올 경우 이벤트르르 전달받겠다는 의미
+            -->
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
